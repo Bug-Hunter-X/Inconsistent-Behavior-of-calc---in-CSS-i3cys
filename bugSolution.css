@@ -1,0 +1,23 @@
+/* bugSolution.css */
+/* Avoid complex nested calc() expressions */
+.container {
+  width: 50%;
+  margin-left: 10vw;
+  /* Instead of calc(50% - 10vw), use separate width and margin */
+}
+
+/* Alternative using grid or flexbox if the complex calc() is vital for layout */
+.container-flex {
+  display: flex;
+  width: 100%;
+}
+.container-flex > div {
+  width: calc(50% - 10vw);
+  /* Simpler calc is used here but you can use flexbox properties to adjust alignment */
+}
+/* Another alternative approach to avoid calc completely */
+.container-alternative{
+  width: 50%;
+  padding-left: 10vw;
+  /* use padding to achieve similar visual result without calc */
+}
